@@ -1,0 +1,51 @@
+@media screen and (max-width: 650px) {
+  body,
+  html {
+    font-size: 0.9rem;
+  }
+  .header {
+    justify-content: center;
+    gap: 0 10%;
+  }
+
+  .header__container__input {
+    position: absolute;
+    right: 7%;
+    top: 20px;
+  }
+
+  .header__input {
+    display: none;
+  }
+
+  .header__svg {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+  }
+  .header__img {
+    width: 120px;
+    height: fit-content;
+  }
+
+  .header__button {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .banner {
+    padding: 140px 0 0 10px;
+  }
+
+  .contacto {
+    flex-wrap: wrap;
+  }
+  .contacto__container__logo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contacto__form {
+    max-width: 300px;
+  }
+}

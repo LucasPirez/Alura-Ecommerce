@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/query650.css" />
+    <title>Alura Geek</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <img src="images/logo.png" class="header__img" alt="alura icon" />
+        <div class="header__container__input">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="header__svg"
+          >
+            <path
+              d="M12.5 11H11.71L11.43 10.73C12.63 9.33 13.25 7.42 12.91 5.39C12.44 2.61 10.12 0.39 7.32001 0.05C3.09001 -0.47 -0.469985 3.09 0.0500152 7.32C0.390015 10.12 2.61002 12.44 5.39002 12.91C7.42002 13.25 9.33002 12.63 10.73 11.43L11 11.71V12.5L15.25 16.75C15.66 17.16 16.33 17.16 16.74 16.75C17.15 16.34 17.15 15.67 16.74 15.26L12.5 11ZM6.50002 11C4.01002 11 2.00002 8.99 2.00002 6.5C2.00002 4.01 4.01002 2 6.50002 2C8.99002 2 11 4.01 11 6.5C11 8.99 8.99002 11 6.50002 11Z"
+              fill="#A2A2A2"
+            />
+          </svg>
+          <input
+            type="search"
+            class="header__input"
+            placeholder="¿Que desea buscar?"
+          />
+        </div>
+      </div>
+
+      <button class="header__button" id="loggin_button">Login</button>
+    </header>
+    <main>
+      <!-- banner -->
+      <section class="banner" id="banner">
+        <h2 class="banner__title">Febrero Promocional</h2>
+        <p class="banner__texto">Productos selecionados con 33% de descuento</p>
+        <button class="banner__button">Ver Consolas</button>
+      </section>
+      <div class="products__container__title" id="all__products__title">
+        <h2 class="products__title">Todos Los Productos</h2>
+        <button class="banner__button" id="agregar__product__button">
+          Agregar Producto
+        </button>
+      </div>
+      <!-- starwars -->
+      <section id="products">
+        <section class="products">
+          <div class="products__container__title" data-product-title>
+            <h2 class="products__title">Star Wars</h2>
+            <button class="products__verTodo" onclick="allProducts()">
+              Ver todo
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M-0.000243529 9L12.1698 9L6.57976 14.59L7.99976 16L15.9998 8L7.99976 -6.99382e-07L6.58976 1.41L12.1698 7L-0.000243354 7L-0.000243529 9Z"
+                  fill="#2A7AE4"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="products__container">
+            <div class="products__container_img" data-product>
+              <img
+                src="images/starWars/star1.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/starWars/star2.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/starWars/star3.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/starWars/star4.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/starWars/star5.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/starWars/star6.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+          </div>
+        </section>
+        <!-- All Products -->
+
+        <!-- Consolas -->
+        <section class="products">
+          <div class="products__container__title" data-product-title>
+            <h2 class="products__title">Consolas</h2>
+            <button class="products__verTodo" onclick="allProducts()">
+              Ver todo
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M-0.000243529 9L12.1698 9L6.57976 14.59L7.99976 16L15.9998 8L7.99976 -6.99382e-07L6.58976 1.41L12.1698 7L-0.000243354 7L-0.000243529 9Z"
+                  fill="#2A7AE4"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="products__container">
+            <div class="products__container_img" data-product>
+              <img
+                src="images/consolas/consolas1.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/consolas/consolas2.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/consolas/consolas3.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/consolas/consolas4.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/consolas/consolas5.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/consolas/consolas6.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+          </div>
+        </section>
+        <!-- Diversos -->
+        <section class="products">
+          <div class="products__container__title" data-product-title>
+            <h2 class="products__title">Diversos</h2>
+            <button class="products__verTodo" onclick="allProducts()">
+              Ver todo
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M-0.000243529 9L12.1698 9L6.57976 14.59L7.99976 16L15.9998 8L7.99976 -6.99382e-07L6.58976 1.41L12.1698 7L-0.000243354 7L-0.000243529 9Z"
+                  fill="#2A7AE4"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="products__container">
+            <div class="products__container_img" data-product>
+              <img
+                src="images/diversos/diversos1.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/diversos/diversos2.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/diversos/diversos3.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/diversos/diversos4.jfif"
+                alt=""
+                class="products__img"
+              />
+
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/diversos/diversos5.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+            <div class="products__container_img" data-product>
+              <img
+                src="images/diversos/diversos6.jfif"
+                alt=""
+                class="products__img"
+              />
+              <figcaption class="products__figcaption">Producto XYZ</figcaption>
+              <p class="products__price">$ 60.00</p>
+              <a href="/" class="products__link">Ver producto</a>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="iniciarSesion" id="iniciarSesion">
+        <h3 class="iniciarSesion__title">Iniciar Sesion</h3>
+        <div class="iniciarSesion__form">
+          <form action="post">
+            <input type="text" class="iniciarSesion__input" />
+            <input type="password" class="iniciarSesion__input" />
+            <button
+              class="banner__button iniciarSesion__button"
+              id="entrar__button"
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="agregarProducto" id="agregar__productos">
+        <h2 class="agregarProducto__title">Agregar nuevo Producto</h2>
+        <form action="" class="agregarProducto__form">
+          <div>
+            <input
+              type="url"
+              class="agregarProducto__input"
+              name="url"
+              required
+            />
+            <label class="agregarProducto__label" for="url"
+              >URL de producto</label
+            >
+          </div>
+          <div>
+            <input
+              type="text"
+              class="agregarProducto__input"
+              name="categoria"
+              required
+            />
+            <label class="agregarProducto__label" for="categoria"
+              >Categoria</label
+            >
+          </div>
+          <div>
+            <input
+              type="text"
+              required
+              name="nombre"
+              class="agregarProducto__input"
+            />
+            <label class="agregarProducto__label" for="nombre"
+              >Nombre del producto</label
+            >
+          </div>
+          <div>
+            <input
+              type="text"
+              required
+              name="precio"
+              class="agregarProducto__input"
+            />
+            <label class="agregarProducto__label" for="precio"
+              >Precio del producto</label
+            >
+          </div>
+          <div>
+            <textarea
+              name="descripcion"
+              cols="30"
+              rows="6"
+              class="agregarProducto__textarea"
+              required
+            ></textarea>
+            <label class="agregarProducto__label" for="descripcion"
+              >Descripcion del producto</label
+            >
+          </div>
+          <div>
+            <button class="banner__button agregarProducto__button">
+              Agregar Producto
+            </button>
+          </div>
+        </form>
+      </section>
+      <section class="contacto">
+        <div class="contacto__container__logo">
+          <img src="images/logo.png" alt="logo" class="contacto__img" />
+          <ul class="contacto__ul">
+            <li class="contacto__li">Quienes somos</li>
+            <li class="contacto__li">Politica de privacidad</li>
+            <li class="contacto__li">Programa de fidelidad</li>
+            <li class="contacto__li">Nuestras tiendas</li>
+            <li class="contacto__li">Quiero ser franquisiado</li>
+            <li class="contacto__li">Anuncie aqui</li>
+          </ul>
+        </div>
+        <form action="post" class="contacto__form">
+          <h4 class="contacto__form__title">Hable con nosotros</h4>
+          <input
+            type="text"
+            placeholder="Nombre"
+            class="contacto__form__input"
+          />
+          <textarea
+            class="contacto__form__texterea"
+            placeholder="Escribe tu mensaje"
+          ></textarea>
+          <button class="banner__button contacto__button">
+            Enviar Mensaje
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Desarrollado por Lucas D Pirez Gallo</p>
+      <span>2022</span>
+    </footer>
+    <script src="javascripts/javascript.js"></script>
+  </body>
+</html>
