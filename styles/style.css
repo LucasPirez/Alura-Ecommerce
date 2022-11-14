@@ -1,3 +1,8 @@
+form > div {
+  position: relative;
+  padding-top: 1.2rem;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -14,6 +19,23 @@
 
 .header__container__input {
   position: relative;
+  height: 1.7rem;
+}
+.header__filter__container {
+  width: 89%;
+  height: 10rem;
+  overflow-y: auto;
+  padding: 0.4rem;
+  background: #eee;
+  padding-left: 1rem;
+  border: 1px solid red;
+  margin-left: 10%;
+}
+
+.filter__select {
+  width: 100%;
+  height: 50px;
+  background: #eee;
 }
 
 .header__svg {
@@ -117,7 +139,6 @@
   padding-bottom: 16px;
 }
 .products__container_img {
-  background-color: red;
   position: relative;
 }
 .products__container::-webkit-scrollbar {
@@ -170,13 +191,15 @@
 }
 .iniciarSesion__title {
   opacity: 0.8;
+  text-align: center;
 }
 
 .iniciarSesion__form {
-  position: relative;
+  width: 100%;
   max-width: 460px;
-  width: auto;
   height: auto;
+  padding: 0 1rem 0 1rem;
+  box-sizing: border-box;
 }
 .iniciarSesion__input {
   width: 100%;
@@ -299,6 +322,19 @@
 
   width: 560px;
 }
+
+/* .contacto__form > div {
+  position: relative;
+  padding-top: 1.2rem; */
+/* } */
+
+.error__form__message {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8;
+  color: rgb(216, 38, 38);
+}
 .contacto__form__input,
 .contacto__form__texterea {
   width: 100%;
@@ -326,4 +362,9 @@
   width: 50px;
   display: flex;
   justify-content: space-between;
+}
+
+.button__disabled {
+  pointer-events: none;
+  opacity: 0.6;
 }

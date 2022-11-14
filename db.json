@@ -1,0 +1,255 @@
+{
+  "all": {
+    "starWars": [
+      {
+        "nameProduct": "muñeco",
+        "price": 80,
+        "count": 5,
+        "img": "images/starWars/star1.jfif",
+        "id": 13
+      },
+      {
+        "nameProduct": "taza",
+        "price": 30,
+        "count": 3,
+        "img": "images/starWars/star2.jfif",
+        "id": 14
+      },
+      {
+        "nameProduct": "yedi",
+        "price": 40,
+        "count": 0,
+        "img": "images/starWars/star3.jfif",
+        "id": 15
+      },
+      {
+        "nameProduct": "capa",
+        "price": 20,
+        "count": 16,
+        "img": "images/starWars/star4.jfif",
+        "id": 16
+      },
+      {
+        "nameProduct": "producto",
+        "price": 30,
+        "count": 2,
+        "img": "images/starWars/star5.jfif",
+        "id": 17
+      },
+      {
+        "nameProduct": "producto",
+        "price": 20,
+        "count": 2,
+        "img": "images/starWars/star6.jfif",
+        "id": 18
+      }
+    ],
+    "consolas": [
+      {
+        "nameProduct": "consola",
+        "price": 30,
+        "count": 3,
+        "img": "images/consolas/consolas1.jfif",
+        "id": 1
+      },
+      {
+        "nameProduct": "joistick",
+        "price": 80,
+        "count": 3,
+        "img": "images/consolas/consolas2.jfif",
+        "id": 2
+      },
+      {
+        "nameProduct": "play station",
+        "price": 80,
+        "count": 3,
+        "img": "images/consolas/consolas3.jfif",
+        "id": 3
+      },
+      {
+        "nameProduct": "nintendo",
+        "price": 80,
+        "count": 3,
+        "img": "images/consolas/consolas4.jfif",
+        "id": 4
+      },
+      {
+        "nameProduct": "x-box",
+        "price": 80,
+        "count": 3,
+        "img": "images/consolas/consolas5.jfif",
+        "id": 5
+      },
+      {
+        "nameProduct": "consola",
+        "price": 80,
+        "count": 3,
+        "img": "images/consolas/consolas6.jfif",
+        "id": 6
+      }
+    ],
+    "diversos": [
+      {
+        "nameProduct": "soni",
+        "price": 60,
+        "count": 3,
+        "img": "images/diversos/diversos1.jfif",
+        "id": 7
+      },
+      {
+        "nameProduct": "remera",
+        "price": 30,
+        "count": 6,
+        "img": "images/diversos/diversos2.jfif",
+        "id": 8
+      },
+      {
+        "nameProduct": "reloj",
+        "price": 80,
+        "count": 0,
+        "img": "images/diversos/diversos3.jfif",
+        "id": 9
+      },
+      {
+        "nameProduct": "pikachu",
+        "price": 80,
+        "count": 3,
+        "img": "images/diversos/diversos4.jfif",
+        "id": 10
+      },
+      {
+        "nameProduct": "diversosProduct",
+        "price": 70,
+        "count": 1,
+        "img": "images/diversos/diversos5.jfif",
+        "id": 11
+      },
+      {
+        "nameProduct": "diversosProduct",
+        "price": 30,
+        "count": 10,
+        "img": "images/diversos/diversos6.jfif",
+        "id": 12
+      }
+    ]
+  },
+  "messages": [
+    {
+      "nombre": "lucas",
+      "mensaje": "danilo",
+      "id": 1
+    },
+    {
+      "nombre": "german",
+      "mensaje": "me comunico con ustedes para mandarle saludos",
+      "id": 2
+    },
+    {
+      "nombre": "oeu",
+      "mensaje": "oeuoeu",
+      "id": 3
+    },
+    {
+      "nombre": "aaaaa",
+      "mensaje": "aaaaa",
+      "id": 4
+    },
+    {
+      "nombre": "yyyy",
+      "mensaje": "yyy",
+      "id": 5
+    },
+    {
+      "nombre": "oeuo",
+      "mensaje": ".p,.p,.p,.p,.p,.p",
+      "id": 6
+    },
+    {
+      "nombre": ",.p",
+      "mensaje": ",.p",
+      "id": 7
+    },
+    {
+      "nombre": "oeu",
+      "mensaje": "oeu",
+      "id": 8
+    },
+    {
+      "nombre": "yyy",
+      "mensaje": "iii",
+      "id": 9
+    },
+    {
+      "nombre": "oeu....",
+      "mensaje": "dddddddddddd",
+      "id": 10
+    },
+    {
+      "nombre": "oeuoeu",
+      "mensaje": "qjkqjkqjkqjkjq",
+      "id": 11
+    },
+    {
+      "nombre": "....u.u.",
+      "mensaje": "hnhtnhtgcrhtncg",
+      "id": 12
+    },
+    {
+      "nombre": "fgyfg",
+      "mensaje": "fgcfgcfcgrcglcrglclcrlcrl",
+      "id": 13
+    },
+    {
+      "nombre": "gcrgcr",
+      "mensaje": "cghttrhgcrthn",
+      "id": 14
+    },
+    {
+      "nombre": ",.p,.p",
+      "mensaje": "ofyhbyfpoihdbopub",
+      "id": 15
+    },
+    {
+      "nombre": "ieuiueieui",
+      "mensaje": "euieueuieui",
+      "id": 16
+    },
+    {
+      "nombre": "aaaa",
+      "mensaje": "aaaa",
+      "id": 17
+    },
+    {
+      "nombre": "aaaee",
+      "mensaje": "aaaee",
+      "id": 18
+    },
+    {
+      "nombre": "oeuoeu",
+      "mensaje": "oeuoe",
+      "id": 19
+    },
+    {
+      "nombre": "aaaaaa",
+      "mensaje": "eeeeeee",
+      "id": 20
+    },
+    {
+      "nombre": "f",
+      "mensaje": "f",
+      "id": 21
+    },
+    {
+      "nombre": "oeu",
+      "mensaje": "euoeu",
+      "id": 22
+    }
+  ],
+  "users": [
+    {
+      "email": "juanito@hotmail.com",
+      "password": 1234,
+      "id": 1
+    }
+  ]
+}

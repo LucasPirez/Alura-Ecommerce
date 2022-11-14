@@ -28,10 +28,15 @@
             />
           </svg>
           <input
-            type="search"
+            type="text"
             class="header__input"
             placeholder="¿Que desea buscar?"
+            id="input__search"
           />
+          <div
+            class="header__filter__container"
+            id="header__container__input"
+          ></div>
         </div>
       </div>
 
@@ -42,7 +47,7 @@
       <section class="banner" id="banner">
         <h2 class="banner__title">Febrero Promocional</h2>
         <p class="banner__texto">Productos selecionados con 33% de descuento</p>
-        <button class="banner__button">Ver Consolas</button>
+        <a href="allProduct.html" class="banner__button">Ver Consolas</a>
       </section>
       <div class="products__container__title" id="all__products__title">
         <h2 class="products__title">Todos Los Productos</h2>
@@ -307,18 +312,37 @@
       </section>
       <section class="iniciarSesion" id="iniciarSesion">
         <h3 class="iniciarSesion__title">Iniciar Sesion</h3>
-        <div class="iniciarSesion__form">
-          <form action="post">
-            <input type="text" class="iniciarSesion__input" />
-            <input type="password" class="iniciarSesion__input" />
-            <button
-              class="banner__button iniciarSesion__button"
-              id="entrar__button"
-            >
-              Entrar
-            </button>
-          </form>
-        </div>
+
+        <form id="form_login" action="" class="iniciarSesion__form">
+          <div>
+            <span class="error__form__message"></span>
+            <input
+              type="email"
+              class="iniciarSesion__input"
+              name="email"
+              data-login
+              required
+            />
+          </div>
+
+          <div>
+            <span class="error__form__message"></span>
+            <input
+              type="password"
+              class="iniciarSesion__input"
+              data-login
+              required
+              name="password"
+              minlength="4"
+            />
+          </div>
+          <button
+            class="banner__button iniciarSesion__button button__disabled"
+            id="entrar__button"
+          >
+            Entrar
+          </button>
+        </form>
       </section>
       <section class="agregarProducto" id="agregar__productos">
         <h2 class="agregarProducto__title">Agregar nuevo Producto</h2>
@@ -398,20 +422,38 @@
             <li class="contacto__li">Anuncie aqui</li>
           </ul>
         </div>
-        <form action="post" class="contacto__form">
+        <form class="contacto__form" id="form_message">
           <h4 class="contacto__form__title">Hable con nosotros</h4>
+          <div>
+            <span class="error__form__message"></span>
+
+            <input
+              type="text"
+              placeholder="Nombre"
+              name="nombre"
+              class="contacto__form__input"
+              required
+              maxlength="40"
+              data-form-message
+            />
+          </div>
+          <div>
+            <span class="error__form__message"></span>
+            <textarea
+              class="contacto__form__texterea"
+              placeholder="Escribe tu mensaje"
+              name="mensaje"
+              required
+              maxlength="120"
+              data-form-message
+            ></textarea>
+          </div>
           <input
-            type="text"
-            placeholder="Nombre"
-            class="contacto__form__input"
+            class="banner__button contacto__button button__disabled"
+            id="button_form_message"
+            type="submit"
+            value="Enviar Mensaje"
           />
-          <textarea
-            class="contacto__form__texterea"
-            placeholder="Escribe tu mensaje"
-          ></textarea>
-          <button class="banner__button contacto__button">
-            Enviar Mensaje
-          </button>
         </form>
       </section>
     </main>
@@ -419,6 +461,11 @@
       <p>Desarrollado por Lucas D Pirez Gallo</p>
       <span>2022</span>
     </footer>
-    <script src="javascripts/javascript.js"></script>
+    <script type="module" src="javascripts/javascript.mjs"></script>
+    <script type="module" src="javascripts/client-server.mjs"></script>
+    <script type="module" src="javascripts/validacionMessage.mjs"></script>
+    <script type="module" src="javascripts/functions.js"></script>
+    <script type="module" src="javascripts/validationLogin.mjs"></script>
+    <script type="module" src="javascripts/filter.mjs"></script>
   </body>
 </html>
