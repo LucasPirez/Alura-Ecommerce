@@ -3,66 +3,6 @@ form > div {
   padding-top: 1.2rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  border-bottom: 1px solid red;
-  height: 90px;
-}
-
-.header__container {
-  display: flex;
-  align-items: center;
-}
-
-.header__container__input {
-  position: relative;
-  height: 1.7rem;
-}
-.header__filter__container {
-  width: 89%;
-  height: 10rem;
-  overflow-y: auto;
-  padding: 0.4rem;
-  background: #eee;
-  padding-left: 1rem;
-  border: 1px solid red;
-  margin-left: 10%;
-}
-
-.filter__select {
-  width: 100%;
-  height: 50px;
-  background: #eee;
-}
-
-.header__svg {
-  position: absolute;
-  right: 8px;
-  top: 5px;
-}
-
-.header__input {
-  width: 240px;
-  background: #eee;
-  margin-left: 30px;
-  padding: 0.3rem 0.5rem;
-  font-size: 1rem;
-  border-radius: 999px;
-  border: none;
-}
-.header__button {
-  padding: 0.5rem 2.2rem;
-  color: #2a7ae4;
-  border: 1px solid #2a7ae4;
-  background: transparent;
-  font-family: monospace;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
 .banner {
   box-sizing: border-box;
   height: 350px;
@@ -103,6 +43,7 @@ form > div {
   position: relative;
   max-width: 1140px;
   width: auto;
+
   height: auto;
   padding: 20px;
   margin: auto;
@@ -162,7 +103,14 @@ form > div {
   width: 180px;
   height: 180px;
   object-fit: cover;
+  transition: transform 0.3s;
 }
+
+.products__container_img:hover > .products__img {
+  transform: scale(1.07);
+  box-shadow: 2px 2px 18px #0099aa70;
+}
+
 .products__figcaption {
   opacity: 0.7;
   font-size: 0.8rem;
@@ -234,10 +182,35 @@ form > div {
 
 .agregarProducto__form > div {
   position: relative;
-  max-width: 600px;
+  max-width: 580px;
   height: auto;
+  min-height: 35px;
   margin: 8px 0;
   padding: 0 10px;
+}
+
+.agregarProducto__drop {
+  width: 310px;
+  height: 170px;
+  background: #fafafa;
+  border: 2px dashed #ddd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.agregarProducto__drop span {
+  opacity: 0.5;
+  width: 250px;
+  object-fit: contain;
+  position: absolute;
+}
+.agregarProducto__drop img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
 }
 
 .agregarProducto__label {
@@ -252,7 +225,7 @@ form > div {
 
 .agregarProducto__input,
 .agregarProducto__textarea {
-  width: 94%;
+  width: 100%;
   border: 2px solid transparent;
 
   margin: center;
@@ -265,6 +238,22 @@ form > div {
 .agregarProducto__textarea {
   height: auto;
   padding-top: 30px;
+}
+
+.agregarProducto__input__file {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  padding: 1rem;
+  color: red;
+
+  /* opacity: 0; */
+}
+.agregarProducto__label__file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 .agregarProducto__input:focus,
 .agregarProducto__textarea:focus {

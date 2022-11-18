@@ -1,13 +1,14 @@
 const banner = document.getElementById("banner");
 //login
 const loginButton = document.getElementById("loggin_button");
-const iniciarSesion = document.getElementById("iniciarSesion");
+// const iniciarSesion = document.getElementById("iniciarSesion");
 const entrarButton = document.getElementById("entrar__button");
 //products
+// const allPorductTitle = document.getElementById("all__products__title");
+const allProductsItems = document.querySelectorAll("[data-product]");
 const productsTitle = document.querySelectorAll("[data-product-title]");
 const products = document.getElementById("products");
-const allPorductTitle = document.getElementById("all__products__title");
-const allProductsItems = document.querySelectorAll("[data-product]");
+
 //agregar productos
 const agregarProducts = document.getElementById("agregar__productos");
 const buttonAgregar = document.getElementById("agregar__product__button");
@@ -61,16 +62,3 @@ function allProducts() {
   allPorductTitle.style.display = "flex";
   allProductsItems.forEach((u) => addDeleteEdit(u));
 }
-
-//vista agregar products
-
-buttonAgregar.onclick = (e) => {
-  e.preventDefault();
-
-  products.style.display = "none";
-  banner.style.display = "none";
-  iniciarSesion.style.display = "none";
-  loginButton.style.display = "none";
-  allPorductTitle.style.display = "none";
-  agregarProducts.style.display = "block";
-};

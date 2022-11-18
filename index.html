@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/query650.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/modal.css" />
     <title>Alura Geek</title>
   </head>
   <body>
     <header class="header">
       <div class="header__container">
-        <img src="images/logo.png" class="header__img" alt="alura icon" />
+        <a href="#/home">
+          <img src="images/logo.png" class="header__img" alt="alura icon" />
+        </a>
         <div class="header__container__input">
           <svg
             width="18"
@@ -40,14 +44,14 @@
         </div>
       </div>
 
-      <button class="header__button" id="loggin_button">Login</button>
+      <a class="header__button" id="loggin_button" href="#/login">Login</a>
     </header>
-    <main>
+    <main id="root">
       <!-- banner -->
       <section class="banner" id="banner">
         <h2 class="banner__title">Febrero Promocional</h2>
         <p class="banner__texto">Productos selecionados con 33% de descuento</p>
-        <a href="allProduct.html" class="banner__button">Ver Consolas</a>
+        <a href="#/allProduct.html" class="banner__button">Ver Consolas</a>
       </section>
       <div class="products__container__title" id="all__products__title">
         <h2 class="products__title">Todos Los Productos</h2>
@@ -57,6 +61,8 @@
       </div>
       <!-- starwars -->
       <section id="products">
+        <!-- starwars -->
+        <!--  
         <section class="products">
           <div class="products__container__title" data-product-title>
             <h2 class="products__title">Star Wars</h2>
@@ -76,7 +82,6 @@
               </svg>
             </button>
           </div>
-
           <div class="products__container">
             <div class="products__container_img" data-product>
               <img
@@ -140,9 +145,7 @@
             </div>
           </div>
         </section>
-        <!-- All Products -->
-
-        <!-- Consolas -->
+        <!-- Consolas 
         <section class="products">
           <div class="products__container__title" data-product-title>
             <h2 class="products__title">Consolas</h2>
@@ -225,7 +228,7 @@
             </div>
           </div>
         </section>
-        <!-- Diversos -->
+        <!-- Diversos
         <section class="products">
           <div class="products__container__title" data-product-title>
             <h2 class="products__title">Diversos</h2>
@@ -309,6 +312,7 @@
             </div>
           </div>
         </section>
+       -->
       </section>
       <section class="iniciarSesion" id="iniciarSesion">
         <h3 class="iniciarSesion__title">Iniciar Sesion</h3>
@@ -336,75 +340,112 @@
               minlength="4"
             />
           </div>
-          <button
+          <a
             class="banner__button iniciarSesion__button button__disabled"
             id="entrar__button"
           >
             Entrar
-          </button>
+          </a>
         </form>
       </section>
       <section class="agregarProducto" id="agregar__productos">
-        <h2 class="agregarProducto__title">Agregar nuevo Producto</h2>
+        <h2 class="agregarProducto__title" id="title__agregar__producto">
+          Agregar nuevo Producto
+        </h2>
         <form action="" class="agregarProducto__form">
           <div>
+            <div class="agregarProducto__drop" id="drop__agregarProducto">
+              <span>Arrastre para agregar una imagen para el producto</span>
+              <img src="" id="img__drop" />
+            </div>
             <input
-              type="url"
-              class="agregarProducto__input"
+              type="file"
+              class="agregarProducto__input__file"
+              id="input__file"
+              name="file"
               name="url"
               required
             />
-            <label class="agregarProducto__label" for="url"
-              >URL de producto</label
-            >
+            <!-- <label class="agregarProducto__label__file" for="url"
+              >Buscar en su computador</label
+            > -->
           </div>
           <div>
+            <span class="error__form__message"></span>
             <input
               type="text"
               class="agregarProducto__input"
               name="categoria"
               required
+              data-agregar
             />
             <label class="agregarProducto__label" for="categoria"
-              >Categoria</label
+              >Categoria: starWars consolas o diversos</label
             >
           </div>
           <div>
+            <span class="error__form__message"></span>
+
             <input
               type="text"
               required
               name="nombre"
               class="agregarProducto__input"
+              maxlength="20"
+              data-agregar
             />
             <label class="agregarProducto__label" for="nombre"
               >Nombre del producto</label
             >
           </div>
           <div>
+            <span class="error__form__message"></span>
+
             <input
-              type="text"
+              type="number"
               required
               name="precio"
               class="agregarProducto__input"
+              data-agregar
             />
             <label class="agregarProducto__label" for="precio"
               >Precio del producto</label
             >
           </div>
           <div>
+            <span class="error__form__message"></span>
+
+            <input
+              type="number"
+              required
+              name="precio"
+              class="agregarProducto__input"
+              data-agregar
+            />
+            <label class="agregarProducto__label" for="precio">Stock</label>
+          </div>
+          <div>
+            <span class="error__form__message"></span>
+
             <textarea
-              name="descripcion"
+              name="mensaje"
               cols="30"
               rows="6"
               class="agregarProducto__textarea"
+              maxlength="150"
               required
+              data-agregar
             ></textarea>
             <label class="agregarProducto__label" for="descripcion"
               >Descripcion del producto</label
             >
           </div>
           <div>
-            <button class="banner__button agregarProducto__button">
+            <button
+              class="banner__button agregarProducto__button button__disabled"
+              id="button__agregar"
+              type="button"
+            >
               Agregar Producto
             </button>
           </div>
@@ -456,16 +497,31 @@
           />
         </form>
       </section>
+      <div class="modal" id="modal__container">
+        <h3 class="modal__title">¿Esta seguro/a que quiere eliminarlo?</h3>
+        <div class="modal__button__container">
+          <button class="modal__button" id="button__modal__cancelar">
+            Cancelar
+          </button>
+          <button class="modal__button" id="button__modal">Borrar</button>
+        </div>
+      </div>
     </main>
     <footer class="footer">
       <p>Desarrollado por Lucas D Pirez Gallo</p>
       <span>2022</span>
     </footer>
-    <script type="module" src="javascripts/javascript.mjs"></script>
+    <!-- <script type="module" src="javascripts/javascript.mjs"></script> -->
     <script type="module" src="javascripts/client-server.mjs"></script>
     <script type="module" src="javascripts/validacionMessage.mjs"></script>
     <script type="module" src="javascripts/functions.js"></script>
     <script type="module" src="javascripts/validationLogin.mjs"></script>
     <script type="module" src="javascripts/filter.mjs"></script>
+    <script type="module" src="javascripts/homePage/homeProducts.mjs"></script>
+    <script type="module" src="javascripts/homePage/route.mjs"></script>
+    <script type="module" src="javascripts/route.mjs"></script>
+
+    <script type="module" src="javascripts/agregarProducto.mjs"></script>
+    <script type="module" src="javascripts/addiconDelete.js"></script>
   </body>
 </html>

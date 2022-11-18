@@ -14,8 +14,21 @@ export const errorMessages = {
     valueMissing: "Este campo no puede estar vacio",
     tooShort: "El campo es muy corto",
   },
+  url: {
+    valueMissing: "Este campo no puede estar vacio",
+    typeMismatch: "El formato es incorrecto",
+  },
+  precio: {
+    valueMissing: "Este campo no puede estar vacio",
+    typeMismatch: "Solo numeros",
+  },
+  categoria: {
+    valueMissing: "Este campo no puede estar vacio",
+  },
+  file: {
+    valueMissing: "Ningun archivo seleccionado",
+  },
 };
-
 export function mostrarError(type, input) {
   const errors = ["valueMissing", "tooLong", "typeMismatch", "tooShort"];
   let err = "";
@@ -34,6 +47,7 @@ export function validateinputs(inputs, buttonSend) {
   const disabled = [];
   inputs.forEach((u, i) => {
     u.addEventListener("blur", (e) => {
+      console.log(u.validity.valid);
       if (u.validity.valid) {
         u.parentElement.querySelector("span").innerText = "";
         u.value = e.target.value;
@@ -46,7 +60,7 @@ export function validateinputs(inputs, buttonSend) {
         disabled[i] = true;
       }
 
-      if (disabled.indexOf(true) === -1 && disabled.length === 2) {
+      if (disabled.indexOf(true) === -1 && disabled.length === inputs.length) {
         buttonSend.classList.remove("button__disabled");
       } else {
         buttonSend.classList.add("button__disabled");

@@ -1,5 +1,7 @@
-import { validateinputs } from "./functions.js";
+import { validateinputs } from "./functions.mjs";
 
+export const iniciarSesion = document.getElementById("iniciarSesion");
+const loginLogout = document.getElementById("loggin_button");
 const inputsLogin = document.querySelectorAll("[data-login]");
 const forma = document.getElementById("form_login");
 const buttonLogin = document.getElementById("entrar__button");
@@ -19,23 +21,26 @@ inputsLogin.forEach((u) => {
     buttonLogin.textContent = "Enviar";
   });
 });
+export let boolLogin = false;
 
 buttonLogin.onclick = (e) => {
-  e.preventDefault();
-
   const user = {
     email: inputsLogin[0].value,
     password: inputsLogin[1].value,
   };
 
   peticionUsers().then((data) => {
+    console.log(data);
     data.forEach((u, i) => {
+      console.log(u.password.toString(), user);
       if (
         u["email"] === user["email"] &&
-        toString(u.password) === user.password
+        u.password.toString() === user.password
       ) {
-        console.log("acertado");
-        buttonLogin.textContent = "Entrar";
+        boolLogin = true;
+        window.location.hash = "/agregarModificar";
+        loginLogout.textContent = "Logout";
+        cont;
       } else {
         buttonLogin.style.background = "rgb(216, 38, 38)";
         buttonLogin.textContent = "Email y/o Contraseña invalidos";
