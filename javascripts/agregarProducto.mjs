@@ -138,6 +138,5 @@ export function deleteModal(positionX, positionY, id, name) {
     e.preventDefault();
     e.stopPropagation();
     deleteProduct(id, name);
-    2;
   };
 }

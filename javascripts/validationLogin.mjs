@@ -40,7 +40,6 @@ buttonLogin.onclick = (e) => {
         boolLogin = true;
         window.location.hash = "/agregarModificar";
         loginLogout.textContent = "Logout";
-        cont;
       } else {
         buttonLogin.style.background = "rgb(216, 38, 38)";
         buttonLogin.textContent = "Email y/o Contraseña invalidos";
