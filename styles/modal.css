@@ -16,7 +16,7 @@
 
 .modal__active {
   top: 20%;
-  left: 40%;
+  left: 700px;
 }
 
 .modal__title {
@@ -37,7 +37,8 @@
   font-weight: bold;
 }
 
-.modal__button:hover {
+.modal__button:hover,
+.description__text__container > button:hover {
   color: #fafafa;
   background-color: #09a;
 }

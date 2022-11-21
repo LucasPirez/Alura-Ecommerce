@@ -1,10 +1,14 @@
 import { allProduc } from "./client-server.mjs";
+import { boolLogin } from "./validationLogin.mjs";
 import { deleteModal } from "./agregarProducto.mjs";
 
 export function add() {
+  const con = document.querySelectorAll("[data-product-container]");
   const allProductsItems = document.querySelectorAll("[data-product]");
   const productsTitle = document.querySelectorAll("[data-product-title]");
-  productsTitle.forEach((u) => (u.style.display = "none"));
+  productsTitle.forEach((u) => (u.lastChild.style.display = "none"));
+
+  con.forEach((u) => u.classList.add("products__container__conditional"));
 
   function addDeleteEdit(data) {
     const fragment = document.createDocumentFragment();
@@ -34,14 +38,19 @@ export function add() {
 
     return data.appendChild(fragment);
   }
-  allProductsItems.forEach((u) => addDeleteEdit(u));
+  boolLogin && allProductsItems.forEach((u) => addDeleteEdit(u));
 }
 
 export function remove() {
+  const con = document.querySelectorAll("[data-product-container]");
+
   const allProductsItems = document.querySelectorAll("[data-product]");
   const productsTitle = document.querySelectorAll("[data-product-title]");
 
-  productsTitle.forEach((u) => (u.style.display = "flex"));
+  productsTitle.forEach((u) => (u.lastChild.style.display = "block"));
+  con.forEach((u) => u.classList.remove("products__container__conditional"));
 
-  allProductsItems.forEach((u) => u.lastChild.remove());
+  if (allProductsItems[1].lastChild.textContent !== "Ver Producto") {
+    allProductsItems.forEach((u) => u.lastChild.remove());
+  }
 }

@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="styles/query650.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/modal.css" />
+    <link rel="stylesheet" href="styles/pageDescription.css" />
     <title>Alura Geek</title>
   </head>
   <body>
     <header class="header">
       <div class="header__container">
-        <a href="#/home">
+        <a href="#/">
           <img src="images/logo.png" class="header__img" alt="alura icon" />
         </a>
         <div class="header__container__input">
@@ -44,7 +45,7 @@
         </div>
       </div>
 
-      <a class="header__button" id="loggin_button" href="#/login">Login</a>
+      <button class="header__button" id="loggin_button">Login</button>
     </header>
     <main id="root">
       <!-- banner -->
@@ -55,9 +56,13 @@
       </section>
       <div class="products__container__title" id="all__products__title">
         <h2 class="products__title">Todos Los Productos</h2>
-        <button class="banner__button" id="agregar__product__button">
+        <a
+          class="banner__button"
+          id="agregar__product__button"
+          href="#/agregarModificar"
+        >
           Agregar Producto
-        </button>
+        </a>
       </div>
       <!-- starwars -->
       <section id="products">
@@ -451,6 +456,56 @@
           </div>
         </form>
       </section>
+      <section class="description" id="productDescription">
+        <div class="description__container__img">
+          <img
+            src="images/consolas/consolas1.jfif"
+            alt=""
+            class="description__img"
+            id="descriptionImg"
+          />
+        </div>
+        <div class="description__text__container">
+          <h2 class="description__title" id="descriptionTitle">joistick</h2>
+          <p class="description__text" id="descriptionText">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ex
+            similique illum ipsum iusto veniam, blanditiis corporis reiciendis
+            omnis in numquam animi, corrupti atque alias eius sed, non eveniet
+            error!
+          </p>
+          <p class="description__price" id="descriptionPrice"></p>
+
+          <div class="description__container__contador">
+            <p class="description__stock" id="descriptionStock"></p>
+            <div>
+              <button
+                class="description__button__count"
+                value="-"
+                data-button-descripton
+              >
+                -
+              </button>
+              <span id="description__count" value="0">0</span>
+              <button
+                class="description__button__count"
+                value="+"
+                data-button-descripton
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <button
+            class="description__button__cart"
+            id="button__agregar__carrito"
+          >
+            Agregar Carrito
+          </button>
+          <button class="description__button__cart" id="button__comprar">
+            comprar
+          </button>
+        </div>
+      </section>
       <section class="contacto">
         <div class="contacto__container__logo">
           <img src="images/logo.png" alt="logo" class="contacto__img" />
@@ -523,5 +578,6 @@
 
     <script type="module" src="javascripts/agregarProducto.mjs"></script>
     <script type="module" src="javascripts/addiconDelete.js"></script>
+    <script type="module" src="javascripts/productDescription.mjs"></script>
   </body>
 </html>

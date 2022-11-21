@@ -23,6 +23,19 @@ inputsLogin.forEach((u) => {
 });
 export let boolLogin = false;
 
+loginLogout.onclick = (e) => {
+  const { textContent } = e.target;
+  console.log(textContent);
+  if (textContent === "Logout") {
+    loginLogout.textContent = "Login";
+
+    boolLogin = false;
+    window.document.location.hash = "#/";
+  } else {
+    window.document.location.hash = "#/login";
+  }
+};
+
 buttonLogin.onclick = (e) => {
   const user = {
     email: inputsLogin[0].value,
@@ -38,7 +51,7 @@ buttonLogin.onclick = (e) => {
         u.password.toString() === user.password
       ) {
         boolLogin = true;
-        window.location.hash = "/agregarModificar";
+        window.document.location.hash = "/agregarModificar";
         loginLogout.textContent = "Logout";
       } else {
         buttonLogin.style.background = "rgb(216, 38, 38)";

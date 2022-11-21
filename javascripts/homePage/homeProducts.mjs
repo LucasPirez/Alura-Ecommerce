@@ -21,8 +21,10 @@ function create(data, title) {
   fig.textContent = data.nameProduct;
   p.classList.add("products__price");
   p.textContent = `$${data.price}`;
-  a.href = `/`;
+  a.href = `#/productDescription?${data.id}?${title}`;
+  // #/edit?${idRecibido}?${parentTitle}`;
   a.textContent = "Ver Producto";
+
   a.classList.add("products__link");
 
   divImg.append(img, fig, p, a);
@@ -38,6 +40,7 @@ function create(data, title) {
     section.append(createHeader(u.id));
     const div = document.createElement("div");
     div.classList.add("products__container");
+    div.setAttribute("data-product-container", `${u.id}`);
     u["arr"].forEach((j) => {
       div.appendChild(create(j, u.id));
     });
@@ -46,20 +49,4 @@ function create(data, title) {
     fragment.append(section);
     containerHome.append(fragment);
   });
-
-  // for (const type in response) {
-  //   const section = document.createElement("section");
-  //   section.classList.add("products");
-  //   section.append(createHeader(type));
-  //   const div = document.createElement("div");
-  //   div.classList.add("products__container");
-
-  //   response[type].forEach((u, i) => {
-  //     div.appendChild(create(u));
-  //   });
-
-  //   section.append(div);
-  //   fragment.append(section);
-  //   containerHome.append(fragment);
-  // }
 })();

@@ -1,0 +1,103 @@
+.description {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  min-height: 90vh;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.description__container__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+}
+
+.description__img {
+  width: 80%;
+  background: #fafafa;
+}
+
+.description__text__container {
+  max-width: 600px;
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  height: 90%;
+}
+
+.description__title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.description__price {
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+.description__stock {
+  font-size: 2.3rem;
+}
+
+.description__container__contador > span {
+  width: 80%;
+  font-size: 2rem;
+}
+
+.description__container__contador > div {
+  border: 2px solid #09a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.description__button__count {
+  padding: 0.3rem 2.6rem;
+  border: 2.2px solid #09a;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.1s;
+  font-weight: bold;
+  margin: -2px;
+  font-size: 2rem;
+}
+
+.description__button__count:hover {
+  color: #fafafa;
+  background-color: #09a;
+}
+
+.description__button__count:active {
+  transform: scale(0.95);
+}
+
+.description__text__container > button {
+  margin: 3rem 0 0 5%;
+  padding: 0.7rem 1rem;
+  width: 43%;
+  border: 2.2px solid #09a;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+  .description__price {
+    font-size: 2.3rem;
+  }
+  .description__container__contador > span {
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
+  .description__button__count {
+    font-size: 1.3rem;
+  }
+}

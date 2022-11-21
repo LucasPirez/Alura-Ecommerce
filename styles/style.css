@@ -1,4 +1,4 @@
-form > div {
+:required("pageDescription.css") form > div {
   position: relative;
   padding-top: 1.2rem;
 }
@@ -30,6 +30,7 @@ form > div {
   background: #2a7ae4;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s;
 }
 
@@ -50,7 +51,9 @@ form > div {
 }
 
 .products__container__title {
-  width: 97%;
+  max-width: 1140px;
+  padding: 0 2rem;
+  width: auto;
   height: auto;
   display: flex;
   margin: auto;
@@ -75,13 +78,19 @@ form > div {
   height: auto;
   display: flex;
   justify-content: flex-start;
-  gap: 0 10px;
+  gap: 35px 10px;
   overflow: auto;
   padding-bottom: 16px;
 }
 .products__container_img {
   position: relative;
 }
+
+.products__container__conditional {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .products__container::-webkit-scrollbar {
   visibility: hidden;
   width: 10px;
@@ -124,7 +133,17 @@ form > div {
 .products__link {
   text-decoration: none;
   font-size: 0.9rem;
+  border: 2px solid transparent;
   color: #2a7ae4;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.products__link:hover {
+  box-shadow: 2px 2px 18px #0099aa30;
+  border: 2px solid #0099aa50;
+  color: #0099aa;
 }
 
 .iniciarSesion {
@@ -161,6 +180,7 @@ form > div {
 .iniciarSesion__button {
   width: 100%;
   height: 50px;
+  text-decoration: none;
 }
 
 .agregarProducto {
@@ -227,7 +247,7 @@ form > div {
 .agregarProducto__textarea {
   width: 100%;
   border: 2px solid transparent;
-
+  resize: vertical;
   margin: center;
   border-radius: 5px;
   padding: 28px 0 12px 15px;
@@ -271,6 +291,7 @@ form > div {
 .agregarProducto__button {
   width: 96%;
   border-radius: 3px;
+  text-decoration: none;
 }
 
 .contacto {

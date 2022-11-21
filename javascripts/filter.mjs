@@ -11,38 +11,41 @@ inputSearch.onfocus = (e) => {
 };
 
 inputSearch.onblur = (e) => {
-  container.style.transform = "scale(0)";
+  setTimeout(() => {
+    container.style.transform = "scale(0)";
+  }, 200);
 };
 
 async function filter() {
   const response = await allProduc();
 
   const fragment = document.createDocumentFragment();
-
+  console.log(response);
   inputSearch.onkeyup = (e) => {
     const { value } = e.target;
+    console.log(arr, str, value);
     if (value.length >= 2) {
       response.forEach((j) => {
+        console.log(j);
         j["arr"].map((u, i) => {
-          console.log(u);
           if (!u["nameProduct"].includes(value)) {
-            if (arr.indexOf(`productId${u["id"]}`) !== -1) {
-              const index = arr.indexOf(`productId${u["id"]}`);
+            if (arr.indexOf(`${j["id"]}${u["id"]}`) !== -1) {
+              const index = arr.indexOf(`${j["id"]}${u["id"]}`);
               arr.splice(index, 1);
             }
-            const del = document.getElementById(`productId${u["id"]}`);
+            const del = document.getElementById(`${j["id"]}${u["id"]}`);
 
             if (del !== null) {
               container.removeChild(del);
             }
           } else {
-            if (arr.indexOf(`productId${u["id"]}`) === -1) {
+            if (arr.indexOf(`${j["id"]}${u["id"]}`) === -1) {
               const divContainer = document.createElement("div");
               const name = document.createElement("span");
               const span = document.createElement("span");
               const img = document.createElement("img");
 
-              arr.push(`productId${u["id"]}`);
+              arr.push(`${j["id"]}${u["id"]}`);
               img.src = "images/link.svg";
 
               name.textContent = u["nameProduct"];
@@ -51,8 +54,14 @@ async function filter() {
               // name.href = "/";
               span.innerText = `${j["id"]}`;
 
-              divContainer.id = `productId${u["id"]}`;
+              divContainer.id = `${j["id"]}${u["id"]}`;
               divContainer.classList.add("filter__select");
+              divContainer.onclick = (e) => {
+                e.preventDefault();
+
+                window.location.hash = `#/productDescription?${u["id"]}?${j["id"]}`;
+              };
+
               console.log(divContainer);
               divContainer.append(name, span);
               // divContainer.append(span);
@@ -61,44 +70,6 @@ async function filter() {
           }
         });
       });
-      // for (const val in response) {
-      //   response[val].map((u, i) => {
-      //     if (!u["nameProduct"].includes(value)) {
-      //       if (arr.indexOf(`productId${u["id"]}`) !== -1) {
-      //         const index = arr.indexOf(`productId${u["id"]}`);
-      //         arr.splice(index, 1);
-      //       }
-      //       const del = document.getElementById(`productId${u["id"]}`);
-
-      //       if (del !== null) {
-      //         container.removeChild(del);
-      //       }
-      //     } else {
-      //       if (arr.indexOf(`productId${u["id"]}`) === -1) {
-      //         const divContainer = document.createElement("div");
-      //         const name = document.createElement("span");
-      //         const span = document.createElement("span");
-      //         const img = document.createElement("img");
-
-      //         arr.push(`productId${u["id"]}`);
-      //         img.src = "images/link.svg";
-
-      //         name.textContent = u["nameProduct"];
-      //         name.appendChild(img);
-
-      //         // name.href = "/";
-      //         span.innerText = `${val}`;
-
-      //         divContainer.id = `productId${u["id"]}`;
-      //         divContainer.classList.add("filter__select");
-      //         console.log(divContainer);
-      //         divContainer.append(name, span);
-      //         // divContainer.append(span);
-      //         container.appendChild(divContainer);
-      //       }
-      //     }
-      //   });
-      // }
     }
   };
 }

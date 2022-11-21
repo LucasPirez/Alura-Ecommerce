@@ -76,9 +76,9 @@ export async function deleteProduct(id, name) {
         "Content-Type": "application/json",
       },
     });
-
-    return response;
+    return false;
   } catch (error) {
     console.log(error);
   }
+  return false;
 }

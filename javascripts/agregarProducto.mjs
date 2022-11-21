@@ -13,13 +13,12 @@ export const buttonEdit = document.getElementById("button__editar");
 const modalContainer = document.getElementById("modal__container");
 const buttonModal = document.getElementById("button__modal");
 const buttonCancelar = document.getElementById("button__modal__cancelar");
-
 const containerDrop = document.getElementById("drop__agregarProducto");
 const inputFile = document.getElementById("input__file");
 const img = document.getElementById("img__drop");
 const inputs = document.querySelectorAll("[data-agregar]");
 
-console.log(inputs);
+console.log(inputFile.files);
 img.style.zIndex = 9;
 
 containerDrop.addEventListener("dragleave", (e) => {
@@ -61,6 +60,16 @@ inputFile.addEventListener("change", (e) => {
 });
 validateinputs(inputs, buttonSend);
 
+export function cleanForm() {
+  inputFile.value = "";
+  img.src = "";
+  inputs[0].value = "";
+  inputs[1].value = "";
+  inputs[2].value = "";
+  inputs[3].value = "";
+  inputs[4].value = "";
+}
+
 buttonSend.onclick = (e) => {
   e.preventDefault();
   const arr = ["starWars", "consolas", "diversos"];
@@ -75,9 +84,16 @@ buttonSend.onclick = (e) => {
   };
   if (imgSend !== undefined && arr.indexOf(inputs[0].value) !== -1) {
     if (location.hash.includes("#/edit")) {
-      modify(idSend, inputs[0].value, data);
+      modify(idSend, inputs[0].value, data).then((data) => {
+        console.log(data);
+        cleanForm();
+      });
     } else {
-      agregarProducto(inputs[0].value, data);
+      agregarProducto(inputs[0].value, data).then((data) => {
+        console.log(data);
+
+        cleanForm();
+      });
     }
   }
 };
@@ -92,40 +108,20 @@ export async function formEdit(id, name) {
   inputs[2].value = response.price;
   inputs[3].value = response.count || "no indicado";
   inputs[4].value = response.descripcion || "";
-
-  buttonEdit.onclick = (e) => {};
 }
 
-export function deleteModal(positionX, positionY, id, name) {
+export function deleteModal(positionX, positionY, id, name, type = "") {
   console.log(positionX, positionY);
-
-  modalContainer.onclick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
 
   modalContainer.style.top = `${positionY - 60}px`;
   modalContainer.style.left = `${positionX - 165}px`;
   setTimeout(() => {
-    modalContainer.style.top = `${60}px`;
-    modalContainer.style.left = `${165}px`;
+    modalContainer.style.top = `20%`;
+    modalContainer.style.left = `calc(50% - 165px)`;
     modalContainer.style.transform = "scale(1)";
   }, 220);
 
-  buttonModal.onclick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   buttonCancelar.onclick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    modalContainer.style.transform = "scale(0)";
-    modalContainer.style.top = `${positionY - 60}px`;
-    modalContainer.style.left = `${positionX - 165}px`;
-    console.log("click");
-  };
-  window.document.body.onclick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     modalContainer.style.transform = "scale(0)";
@@ -138,5 +134,6 @@ export function deleteModal(positionX, positionY, id, name) {
     e.preventDefault();
     e.stopPropagation();
     deleteProduct(id, name);
+    return false;
   };
 }
