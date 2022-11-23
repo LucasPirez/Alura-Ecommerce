@@ -1,5 +1,7 @@
 .description {
   position: relative;
+  max-width: 1250px;
+  margin: auto;
   width: 100%;
   margin-top: 2rem;
   min-height: 90vh;
@@ -8,6 +10,8 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  border: 2px solid #0099aa50;
+  box-shadow: 10px 10px 30px #ddd;
 }
 
 .description__container__img {

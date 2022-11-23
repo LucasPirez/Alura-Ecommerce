@@ -1,4 +1,5 @@
 import { validateinputs } from "./functions.mjs";
+import { peticionUsers } from "./client-server.mjs";
 
 export const iniciarSesion = document.getElementById("iniciarSesion");
 const loginLogout = document.getElementById("loggin_button");
@@ -8,55 +9,58 @@ const buttonLogin = document.getElementById("entrar__button");
 
 validateinputs(inputsLogin, buttonLogin);
 
-async function peticionUsers() {
-  const response = await fetch("http://localhost:3000/users");
-  const result = await response.json();
-  console.log("hola");
-  return result;
+if (sessionStorage.getItem("auth") === "true") {
+  loginLogout.textContent = "Logout";
 }
 
 inputsLogin.forEach((u) => {
   u.addEventListener("focus", (e) => {
-    buttonLogin.style.background = "blue";
+    buttonLogin.style.background = "#2a7ae4";
     buttonLogin.textContent = "Enviar";
   });
 });
-export let boolLogin = false;
 
 loginLogout.onclick = (e) => {
   const { textContent } = e.target;
   console.log(textContent);
   if (textContent === "Logout") {
     loginLogout.textContent = "Login";
+    sessionStorage.setItem("auth", "false");
 
-    boolLogin = false;
     window.document.location.hash = "#/";
   } else {
     window.document.location.hash = "#/login";
   }
 };
 
-buttonLogin.onclick = (e) => {
+buttonLogin.onclick = async (e) => {
   const user = {
     email: inputsLogin[0].value,
     password: inputsLogin[1].value,
   };
 
-  peticionUsers().then((data) => {
-    console.log(data);
-    data.forEach((u, i) => {
+  const response = await peticionUsers();
+
+  console.log(response);
+  let coincidence = false;
+
+  response !== [] &&
+    response.forEach((u, i) => {
       console.log(u.password.toString(), user);
       if (
         u["email"] === user["email"] &&
         u.password.toString() === user.password
       ) {
-        boolLogin = true;
-        window.document.location.hash = "/agregarModificar";
-        loginLogout.textContent = "Logout";
-      } else {
-        buttonLogin.style.background = "rgb(216, 38, 38)";
-        buttonLogin.textContent = "Email y/o Contraseña invalidos";
+        coincidence = true;
       }
     });
-  });
+
+  if (coincidence) {
+    sessionStorage.setItem("auth", "true");
+    window.document.location.hash = "/agregarModificar";
+    loginLogout.textContent = "Logout";
+  } else {
+    buttonLogin.style.background = "rgb(216, 38, 38)";
+    buttonLogin.textContent = "Email y/o Contraseña invalidos";
+  }
 };

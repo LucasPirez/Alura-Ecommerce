@@ -30,6 +30,13 @@ export async function productDescriptionGenerate(id, name) {
     descriptionStock.value = response.count;
     buttonCarrito.innerText = ` Agregar Carrito x 1`;
     buttonComprar.innerText = `Comprar x ${response.price}`;
+
+    if (response.count <= 0) {
+      buttonCarrito.style.pointerEvents = "none";
+      buttonCarrito.style.opacity = "0.7";
+      buttonComprar.style.pointerEvents = "none";
+      buttonComprar.style.opacity = "0.7";
+    }
   } catch (error) {
     console.log(error);
   }

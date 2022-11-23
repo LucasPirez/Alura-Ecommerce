@@ -1,5 +1,5 @@
 import { allProduc } from "./client-server.mjs";
-import { boolLogin } from "./validationLogin.mjs";
+
 import { deleteModal } from "./agregarProducto.mjs";
 
 export function add() {
@@ -17,6 +17,7 @@ export function add() {
     const imgDelete = document.createElement("img");
     const imgEdit = document.createElement("img");
     const idRecibido = data.getAttribute("data-id");
+    const index = data.getAttribute("data-index");
     const parentTitle = data.getAttribute("data-product");
 
     div.classList.add("container__edit__delete");
@@ -27,7 +28,7 @@ export function add() {
       e.preventDefault();
 
       const { clientX, clientY } = e;
-      deleteModal(clientX, clientY, idRecibido, parentTitle);
+      deleteModal(clientX, clientY, idRecibido, parentTitle, index);
     };
 
     imgEdit.src = "images/edit.svg";
@@ -38,7 +39,8 @@ export function add() {
 
     return data.appendChild(fragment);
   }
-  boolLogin && allProductsItems.forEach((u) => addDeleteEdit(u));
+  sessionStorage.getItem("auth") === "true" &&
+    allProductsItems.forEach((u) => addDeleteEdit(u));
 }
 
 export function remove() {
@@ -50,7 +52,10 @@ export function remove() {
   productsTitle.forEach((u) => (u.lastChild.style.display = "block"));
   con.forEach((u) => u.classList.remove("products__container__conditional"));
 
-  if (allProductsItems[1].lastChild.textContent !== "Ver Producto") {
+  if (
+    allProductsItems[1] &&
+    allProductsItems[1].lastChild.textContent !== "Ver Producto"
+  ) {
     allProductsItems.forEach((u) => u.lastChild.remove());
   }
 }

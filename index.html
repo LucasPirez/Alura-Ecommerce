@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/query650.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/modal.css" />
     <link rel="stylesheet" href="styles/pageDescription.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Alura Geek</title>
   </head>
   <body>
@@ -52,7 +52,7 @@
       <section class="banner" id="banner">
         <h2 class="banner__title">Febrero Promocional</h2>
         <p class="banner__texto">Productos selecionados con 33% de descuento</p>
-        <a href="#/allProduct.html" class="banner__button">Ver Consolas</a>
+        <a href="#/consolas" class="banner__button">Ver Consolas</a>
       </section>
       <div class="products__container__title" id="all__products__title">
         <h2 class="products__title">Todos Los Productos</h2>
@@ -65,260 +65,7 @@
         </a>
       </div>
       <!-- starwars -->
-      <section id="products">
-        <!-- starwars -->
-        <!--  
-        <section class="products">
-          <div class="products__container__title" data-product-title>
-            <h2 class="products__title">Star Wars</h2>
-            <button class="products__verTodo" onclick="allProducts()">
-              Ver todo
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M-0.000243529 9L12.1698 9L6.57976 14.59L7.99976 16L15.9998 8L7.99976 -6.99382e-07L6.58976 1.41L12.1698 7L-0.000243354 7L-0.000243529 9Z"
-                  fill="#2A7AE4"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="products__container">
-            <div class="products__container_img" data-product>
-              <img
-                src="images/starWars/star1.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/starWars/star2.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/starWars/star3.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/starWars/star4.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/starWars/star5.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/starWars/star6.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-          </div>
-        </section>
-        <!-- Consolas 
-        <section class="products">
-          <div class="products__container__title" data-product-title>
-            <h2 class="products__title">Consolas</h2>
-            <button class="products__verTodo" onclick="allProducts()">
-              Ver todo
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M-0.000243529 9L12.1698 9L6.57976 14.59L7.99976 16L15.9998 8L7.99976 -6.99382e-07L6.58976 1.41L12.1698 7L-0.000243354 7L-0.000243529 9Z"
-                  fill="#2A7AE4"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="products__container">
-            <div class="products__container_img" data-product>
-              <img
-                src="images/consolas/consolas1.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/consolas/consolas2.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/consolas/consolas3.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/consolas/consolas4.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/consolas/consolas5.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/consolas/consolas6.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-          </div>
-        </section>
-        <!-- Diversos
-        <section class="products">
-          <div class="products__container__title" data-product-title>
-            <h2 class="products__title">Diversos</h2>
-            <button class="products__verTodo" onclick="allProducts()">
-              Ver todo
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M-0.000243529 9L12.1698 9L6.57976 14.59L7.99976 16L15.9998 8L7.99976 -6.99382e-07L6.58976 1.41L12.1698 7L-0.000243354 7L-0.000243529 9Z"
-                  fill="#2A7AE4"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="products__container">
-            <div class="products__container_img" data-product>
-              <img
-                src="images/diversos/diversos1.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/diversos/diversos2.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/diversos/diversos3.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/diversos/diversos4.jfif"
-                alt=""
-                class="products__img"
-              />
-
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/diversos/diversos5.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-            <div class="products__container_img" data-product>
-              <img
-                src="images/diversos/diversos6.jfif"
-                alt=""
-                class="products__img"
-              />
-              <figcaption class="products__figcaption">Producto XYZ</figcaption>
-              <p class="products__price">$ 60.00</p>
-              <a href="/" class="products__link">Ver producto</a>
-            </div>
-          </div>
-        </section>
-       -->
-      </section>
+      <section id="products"></section>
       <section class="iniciarSesion" id="iniciarSesion">
         <h3 class="iniciarSesion__title">Iniciar Sesion</h3>
 
@@ -345,10 +92,7 @@
               minlength="4"
             />
           </div>
-          <a
-            class="banner__button iniciarSesion__button button__disabled"
-            id="entrar__button"
-          >
+          <a class="iniciarSesion__button button__disabled" id="entrar__button">
             Entrar
           </a>
         </form>
@@ -457,6 +201,7 @@
         </form>
       </section>
       <section class="description" id="productDescription">
+        <!-- <h2>Descripcion del producto</h2> -->
         <div class="description__container__img">
           <img
             src="images/consolas/consolas1.jfif"
@@ -466,7 +211,7 @@
           />
         </div>
         <div class="description__text__container">
-          <h2 class="description__title" id="descriptionTitle">joistick</h2>
+          <h3 class="description__title" id="descriptionTitle"></h3>
           <p class="description__text" id="descriptionText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ex
             similique illum ipsum iusto veniam, blanditiis corporis reiciendis
@@ -566,9 +311,8 @@
       <p>Desarrollado por Lucas D Pirez Gallo</p>
       <span>2022</span>
     </footer>
-    <!-- <script type="module" src="javascripts/javascript.mjs"></script> -->
+
     <script type="module" src="javascripts/client-server.mjs"></script>
-    <script type="module" src="javascripts/validacionMessage.mjs"></script>
     <script type="module" src="javascripts/functions.js"></script>
     <script type="module" src="javascripts/validationLogin.mjs"></script>
     <script type="module" src="javascripts/filter.mjs"></script>
@@ -579,5 +323,6 @@
     <script type="module" src="javascripts/agregarProducto.mjs"></script>
     <script type="module" src="javascripts/addiconDelete.js"></script>
     <script type="module" src="javascripts/productDescription.mjs"></script>
+    <script type="module" src="javascripts/validationMessage.mjs"></script>
   </body>
 </html>

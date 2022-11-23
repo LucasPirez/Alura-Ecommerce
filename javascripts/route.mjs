@@ -1,4 +1,4 @@
-import { iniciarSesion, boolLogin } from "./validationLogin.mjs";
+import { iniciarSesion } from "./validationLogin.mjs";
 import { containerHome } from "./homePage/homeProducts.mjs";
 import { add, remove } from "./addiconDelete.js";
 import { decriptionContainer } from "./productDescription.mjs";
@@ -45,11 +45,10 @@ window.addEventListener("hashchange", () => {
   }
 
   if (route.includes("#/agregarModificar") || route.includes("#/edit")) {
-    console.log(boolLogin);
     decriptionContainer.style.display = "none";
     allProductsTitle.style.display = "none";
 
-    if (boolLogin) {
+    if (sessionStorage.getItem("auth") === "true") {
       containerHome.style.display = "none";
       iniciarSesion.style.display = "none";
       containerAgregar.style.display = "block";
@@ -83,11 +82,17 @@ window.addEventListener("hashchange", () => {
     case "#/":
       remove();
       containerHome.style.display = "block";
+
       iniciarSesion.style.display = "none";
       decriptionContainer.style.display = "none";
       allProductsTitle.style.display = "none";
       banner.style.display = "block";
       containerAgregar.style.display = "none";
+
+      if (containerHome.lastChild) {
+        containerHome.firstChild.style.display = "block";
+        containerHome.lastChild.style.display = "block";
+      }
 
       break;
     case "#/allProducts":
@@ -95,13 +100,18 @@ window.addEventListener("hashchange", () => {
       allProductsTitle.style.display = "flex";
       decriptionContainer.style.display = "none";
       containerAgregar.style.display = "none";
+      containerHome.firstChild.style.display = "block";
+      containerHome.lastChild.style.display = "block";
 
-      if (!boolLogin) {
+      if (sessionStorage.getItem("auth") !== "true") {
         allProductsTitle.lastElementChild.style.display = "none";
       }
       add();
       break;
-
+    case "#/consolas":
+      containerHome.firstChild.style.display = "none";
+      containerHome.lastChild.style.display = "none";
+      break;
     default:
       break;
   }

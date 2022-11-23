@@ -110,9 +110,13 @@ export async function formEdit(id, name) {
   inputs[4].value = response.descripcion || "";
 }
 
-export function deleteModal(positionX, positionY, id, name, type = "") {
-  console.log(positionX, positionY);
+function cerrar(a, positionX, positionY) {
+  a.style.transform = "scale(0)";
+  a.style.top = `${positionY - 60}px`;
+  a.style.left = `${positionX - 165}px`;
+}
 
+export function deleteModal(positionX, positionY, id, name, index) {
   modalContainer.style.top = `${positionY - 60}px`;
   modalContainer.style.left = `${positionX - 165}px`;
   setTimeout(() => {
@@ -124,16 +128,19 @@ export function deleteModal(positionX, positionY, id, name, type = "") {
   buttonCancelar.onclick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    modalContainer.style.transform = "scale(0)";
-    modalContainer.style.top = `${positionY - 60}px`;
-    modalContainer.style.left = `${positionX - 165}px`;
-    console.log("click");
+    cerrar(modalContainer, positionX, positionY);
   };
 
-  buttonModal.onclick = (e) => {
+  buttonModal.onclick = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    deleteProduct(id, name);
-    return false;
+    const response = await deleteProduct(id, name);
+    if (response.ok) {
+      cerrar(modalContainer, positionX, positionY);
+      document.querySelectorAll(`[data-product=${name}]`)[index].style.display =
+        "none";
+    } else {
+      alert("Ha ocurrido un error");
+    }
   };
 }

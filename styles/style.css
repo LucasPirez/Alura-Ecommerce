@@ -156,6 +156,12 @@
   background: #eee;
   margin-bottom: -50px;
 }
+
+.iniciarSesion form > div {
+  position: relative;
+  padding: 0.7rem;
+}
+
 .iniciarSesion__title {
   opacity: 0.8;
   text-align: center;
@@ -174,13 +180,22 @@
   padding: 1rem;
   font-size: 1.2rem;
   border: none;
-  margin: 10px 0;
+  margin: 6px 0;
 }
 
 .iniciarSesion__button {
-  width: 100%;
-  height: 50px;
+  padding: 0.7rem 0.5rem;
+  color: #fff;
+  background: #2a7ae4;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
+  transition: all 0.3s;
+}
+
+.iniciarSesion__button:hover {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
 }
 
 .agregarProducto {
@@ -333,10 +348,10 @@
   width: 560px;
 }
 
-/* .contacto__form > div {
+.contacto__form > div {
   position: relative;
-  padding-top: 1.2rem; */
-/* } */
+  padding-top: 1.2rem;
+}
 
 .error__form__message {
   position: absolute;
@@ -351,6 +366,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border: none;
+  border-radius: 4px;
 }
 
 .contacto__button {

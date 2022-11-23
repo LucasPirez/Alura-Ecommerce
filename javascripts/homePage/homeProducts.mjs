@@ -4,7 +4,7 @@ import { allProduc } from "../client-server.mjs";
 export const containerHome = document.getElementById("products");
 const fragment = document.createDocumentFragment();
 
-function create(data, title) {
+function create(data, title, index) {
   const divImg = document.createElement("div");
   const img = document.createElement("img");
   const fig = document.createElement("figcaption");
@@ -14,6 +14,7 @@ function create(data, title) {
   divImg.classList.add("products__container_img");
   divImg.setAttribute("data-product", `${title}`);
   divImg.setAttribute("data-id", data.id);
+  divImg.setAttribute("data-index", index);
   img.setAttribute("src", data.img);
   img.alt = data.nameProduct;
   img.classList.add("products__img");
@@ -22,7 +23,6 @@ function create(data, title) {
   p.classList.add("products__price");
   p.textContent = `$${data.price}`;
   a.href = `#/productDescription?${data.id}?${title}`;
-  // #/edit?${idRecibido}?${parentTitle}`;
   a.textContent = "Ver Producto";
 
   a.classList.add("products__link");
@@ -33,7 +33,6 @@ function create(data, title) {
 
 (async () => {
   const response = await allProduc();
-  console.log(response);
   response.forEach((u, i) => {
     const section = document.createElement("section");
     section.classList.add("products");
@@ -41,8 +40,8 @@ function create(data, title) {
     const div = document.createElement("div");
     div.classList.add("products__container");
     div.setAttribute("data-product-container", `${u.id}`);
-    u["arr"].forEach((j) => {
-      div.appendChild(create(j, u.id));
+    u["arr"].forEach((j, index) => {
+      div.appendChild(create(j, u.id, index));
     });
 
     section.append(div);
